@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     Button  startButton;
 
     public void start(View view){
+        startButton.setVisibility(View.INVISIBLE);
 
     }
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        startButton = (Button)findViewById(R.id.startButton);
     }
 
     @Override
