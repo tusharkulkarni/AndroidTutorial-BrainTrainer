@@ -21,7 +21,7 @@
         android:padding="40dp"
         android:backgroundTint="#25dc00"
         android:onClick="start"
-        android:visibility="invisible" />
+        android:visibility="visible" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,7 +33,8 @@
         android:background="#ffbcbc"
         android:padding="5dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:visibility="invisible" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -44,7 +45,8 @@
         android:layout_alignParentEnd="true"
         android:textSize="40sp"
         android:padding="5dp"
-        android:background="#8c8aff" />
+        android:background="#8c8aff"
+        android:visibility="invisible" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,12 +54,12 @@
         android:text="3 + 5"
         android:id="@+id/questionText"
         android:textSize="35sp"
-        android:background="#e9da34"
         android:padding="5dp"
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:layout_alignBottom="@+id/timerText"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
 
     <GridLayout
         android:layout_width="match_parent"
@@ -65,10 +67,9 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/timerText"
 
-        android:paddingTop="0dp"
-        android:layout_alignBottom="@+id/startButton"
         android:id="@+id/answersGrid"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:visibility="invisible">
 
         <Button
             android:layout_width="wrap_content"
@@ -131,10 +132,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Score"
         android:id="@+id/resultText"
+        android:textSize="40sp"
+        android:visibility="invisible"
         android:layout_below="@+id/answersGrid"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play Again!"
+        android:id="@+id/playAgainButton"
+        android:visibility="invisible"
+        android:layout_below="@+id/resultText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
-        android:textSize="40sp" />
+        android:onClick="playAgain" />
 </RelativeLayout>
