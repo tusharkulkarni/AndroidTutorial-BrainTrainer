@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         correctCount = 0;
         correctAnswer = -1;
         startButton.setVisibility(View.INVISIBLE);
+        restartButton.setVisibility(View.VISIBLE);
         resultText.setText("");
         playAgainButton.setVisibility(View.INVISIBLE);
         button1.setEnabled(true);
