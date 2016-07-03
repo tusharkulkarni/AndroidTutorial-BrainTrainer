@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     Button  button2;
     Button  button3;
     Button  button4;
+    Button  restartButton;
     Button playAgainButton;
     TextView resultText;
     TextView scoreText;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         startButton.setVisibility(View.INVISIBLE);
         scoreText.setVisibility(View.VISIBLE);
         timerText.setVisibility(View.VISIBLE);
+        restartButton.setVisibility(View.VISIBLE);
         questionText.setVisibility(View.VISIBLE);
         scoreText.setVisibility(View.VISIBLE);
         resultText.setVisibility(View.VISIBLE);
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         button2 = (Button)findViewById(R.id.button2);
         button3 = (Button)findViewById(R.id.button3);
         button4 = (Button)findViewById(R.id.button4);
+        restartButton = (Button)findViewById(R.id.restartButton);
         scoreText = (TextView) findViewById(R.id.scoreText);
         timerText = (TextView) findViewById(R.id.timerText);
         startButton = (Button)findViewById(R.id.startButton);
@@ -78,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
         button3.setEnabled(true);
         button4.setEnabled(true);
         scoreText.setText(correctCount + "/" + totalCount);
+        if(null != countDownTimer) {
+            countDownTimer.cancel();
+        }
         countDownTimer = new CountDownTimer(30100, 990) {
 
             public void onTick(long millisUntilFinished) {
@@ -100,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 button3.setEnabled(false);
                 button4.setEnabled(false);
                 playAgainButton.setVisibility(View.VISIBLE);
+                restartButton.setVisibility(View.INVISIBLE);
 
             }
         }.start();
@@ -197,5 +204,10 @@ public class MainActivity extends AppCompatActivity {
         reset();
         newQuestion();
 
+    }
+
+    public void restartGame(View view){
+        reset();
+        newQuestion();
     }
 }
